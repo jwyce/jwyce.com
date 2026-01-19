@@ -22,12 +22,16 @@ interface Artist {
 	url: string;
 }
 
+function getBaseUrl() {
+	if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+	return process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
+}
+
 async function getTopTracks(): Promise<Track[]> {
 	try {
-		const res = await fetch(
-			`${process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"}/api/spotify/top-tracks`,
-			{ next: { revalidate: 86400 } },
-		);
+		const res = await fetch(`${getBaseUrl()}/api/spotify/top-tracks`, {
+			next: { revalidate: 86400 },
+		});
 		if (!res.ok) return [];
 		const data = await res.json();
 		return data.tracks ?? [];
@@ -38,10 +42,9 @@ async function getTopTracks(): Promise<Track[]> {
 
 async function getTopArtists(): Promise<Artist[]> {
 	try {
-		const res = await fetch(
-			`${process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"}/api/spotify/top-artists`,
-			{ next: { revalidate: 86400 } },
-		);
+		const res = await fetch(`${getBaseUrl()}/api/spotify/top-artists`, {
+			next: { revalidate: 86400 },
+		});
 		if (!res.ok) return [];
 		const data = await res.json();
 		return data.artists ?? [];
