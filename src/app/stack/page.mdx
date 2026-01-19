@@ -1,0 +1,75 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "My Stack",
+  description: "The tools and technologies I use.",
+};
+
+# My Stack
+
+<p className="text-muted-foreground">
+  <Link href='/' className="no-underline hover:no-underline">
+    Jared Wyce
+  </Link>
+</p>
+
+Here's where I'm currently most productive.
+
+## 1. Framework (Tanstack Start and React)
+
+I've been working with React since 2020 so I'm most productive here. [Tanstack Start](https://tanstack.com/start) takes type-safety to another level - full end-to-end type inference for routes, params, and search queries. Less bloat than Next.js.
+
+The latest AI models are _really_ good at React.
+
+## 2. Styling (Tailwind CSS and shadcn/ui)
+
+Building flexible, accessible components is difficult. You either use (and extend) a component library, or build your own. This is why I use [shadcn/ui](https://ui.shadcn.com/).
+
+It provides well-designed and extensible components, built on top of accessible, unstyled primitives. This includes basics like buttons and inputs, but also icons, charts, and even custom themes.
+
+Components are styled with Tailwind CSS, the most AI-friendly CSS library. Why? You can easily [colocate your styles ](https://adamwathan.me/css-utility-classes-and-separation-of-concerns) with your markup. This makes generating and editing code with AI tools much easier.
+
+## 3. Database (Convex or Postgres and Drizzle)
+
+For projects that require real-time features or have potential to make money, I reach for [Convex](https://convex.dev/). It streamlines backend development, is AI-friendly, and enables powerful features out of the box.
+
+Otherwise, my go-to database is Postgres. [Drizzle](https://orm.drizzle.team/) makes working with Postgres easy, type-safe, and fun. I can view and modify my data using Drizzle Studio and run migrations with Drizzle Kit.
+
+Drizzle also works perfectly with TypeScript.
+
+## 4. AI (opencode)
+
+[opencode](https://github.com/opencode-ai/opencode) - an open-source harness for agentic coding with access to all models and a wide plugin ecosystem. It had features like LSP tool calls before other harnesses.
+
+I use [Oh My OpenCode (omo)](https://github.com/ohmyopencode/oh-my-opencode) for curated MCPs, subagents, and tools. On top of that: [supermemory](https://github.com/supermemoryai/opencode-supermemory) plugin for persistent memory, [playwriter](https://github.com/nichochar/playwriter) MCP for browser automation, and can chat remotely with sessions via [kimaki](https://github.com/remorses/kimaki).
+
+## 5. Other Tools
+
+### Editor (neovim)
+
+Key plugins:
+- **telescope** - fuzzy finding everything
+- **harpoon** - quick file navigation
+- **oil** - file explorer that feels like a buffer
+- **conform** - formatting
+- **blink** - completions
+
+### Terminal (Ghostty)
+
+Performant, great community, rasterizes fonts and renders nerd font icons correctly out of the box.
+
+### Window Management (AeroSpace)
+
+[AeroSpace](https://github.com/nikitabobko/AeroSpace) is a tiling window manager like i3 for macOS. I have main application layouts bound to spaces 1-5 with `cmd+<space-num>`.
+
+### Tmux
+
+Stock [oh-my-tmux](https://github.com/gpakosz/.tmux) config. The crucial addition is a tmux-sessionizer script (stolen from ThePrimeagen) for quickly switching between project sessions.
+
+### VCS (jj)
+
+[jj](https://github.com/jj-vcs/jj) is simpler, more powerful, and more flexible than git. Enables advanced workflows like simultaneously working on branches or stacked PRs.
+
+### Hardware (Kinesis)
+
+I use the [Kinesis Advantage 360 Pro](https://kinesis-ergo.com/shop/adv360pro/) split ergonomic keyboard with minor ZMK customizations on the extra keys.

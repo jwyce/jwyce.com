@@ -1,20 +1,38 @@
 {
-	"compilerOptions": {
-		// Enable top-level await, and other modern ESM features.
-		"target": "ES6",
-		"module": "ESNext",
-		// Enable node-style module resolution, for things like npm package imports.
-		"moduleResolution": "node",
-		// Enable JSON imports.
-		"resolveJsonModule": true,
-		// Enable stricter transpilation for better output.
-		"isolatedModules": true,
-		// Add type definitions for our Vite runtime.
-		"types": ["vite/client"],
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"jsx": "preserve",
-		"jsxImportSource": "solid-js",
-		"allowJs": true
-	}
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      },
+      {
+        "name": "@mdx-js/typescript-plugin"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mdx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules"]
 }

@@ -1,0 +1,156 @@
+import Link from "next/link";
+import { ZoomableImage } from "@/components/zoomable-image";
+import { LinkPreview } from "@/components/link-preview";
+
+export const metadata = {
+  title: "My life in five minutes",
+};
+
+# My life in five minutes
+
+<p className="text-muted-foreground">
+  <Link href='/' className="no-underline hover:no-underline">
+    By Jared Wyce
+  </Link>
+</p>
+
+
+My Uncle, and later the internet, taught me that I can do anything.
+
+When I was 10 years old, my aunt bought me a [Rubik's Cube](https://en.wikipedia.org/wiki/Rubik%27s_Cube) while we were out shopping. We took it home and for weeks I tried solving it on my own to no avail.
+
+My Uncle, being a math teacher and the kind of person who can do anything he puts his mind to, went to the internet to learn how to actually solve it.
+With the help of YouTube and Dan Brown he was able to solve it within the day.
+
+With his notes and rewatching Dan Brown, it took me a few days, but I learned a valuable lesson - with enough tenacity and resources I could learn to do anything. Several years later I would get my first 10s solve in competition!
+
+<div className="my-8 -mx-6 md:-mx-32 lg:-mx-48 px-6 md:px-0">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <iframe
+      className="w-full aspect-video rounded-lg"
+      src="https://www.youtube.com/embed/HsQIoPyfQzM"
+      title="YouTube video"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+    <video
+      className="w-full aspect-video rounded-lg object-cover"
+      src="/cubing-cropped.mp4"
+      controls
+      playsInline
+    />
+  </div>
+</div>
+
+In middle school, I would apply the same skill when my friend group got really into Minecraft. I spent hours watching tutorials on YouTube learning how to set up a development environment, decompile the game, and write Java to create custom items, blocks, and biomes. I shared my mods with friends and posted them on forums - my first taste of building something others could use.
+
+In high school, I joined the FIRST Robotics team and took on the electrical work for our bot. I learned to solder, wire motor controllers, and debug circuits. The same pattern emerged: find resources online, learn by doing, and build something real.
+
+<div className="my-8 -mx-6 md:-mx-32 lg:-mx-48 px-6 md:px-0">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <ZoomableImage
+      src="/minecraft.jpg"
+      alt="Minecraft modding"
+      caption="Minecraft modding circa 2012"
+      className="w-full rounded-lg"
+    />
+    <ZoomableImage
+      src="/robotics-cropped.jpg"
+      alt="Robotics team"
+      caption="FIRST Robotics Competition 2015"
+      className="w-full rounded-lg"
+    />
+  </div>
+</div>
+
+I started college at Rowan University studying computer science, but after a year I transferred to Rutgers. I wanted to be more challenged and surrounded by like-minded people who were passionate about learning and building skills.
+
+At Rutgers I had some amazing professors. [Abdelbaki Brahmia](https://physics.rutgers.edu/people/faculty-list/faculty-profile/brahmia-abdelbaki) for physics and [Abhishek Bhattacharjee](https://www.cs.yale.edu/homes/abhishek/) for computer architecture - their passion was infectious and got me excited to learn at a deeper level.
+
+I also discovered [MIT OpenCourseWare](https://ocw.mit.edu/), which supplemented (and sometimes replaced) my lectures. Courses like [Differential Equations](https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/) and [Design and Analysis of Algorithms](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/) were game-changers. I still use OCW to this day.
+
+<div className="my-8 -mx-6 md:-mx-32 lg:-mx-48 px-6 md:px-0">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <ZoomableImage
+      src="/rutgers-campus-cropped.jpg"
+      alt="Rutgers campus"
+      caption="Rutgers University, Cook Campus"
+      className="w-full rounded-lg"
+    />
+    <ZoomableImage
+      src="/rutgers-arial.jpg"
+      alt="Rutgers aerial view"
+      caption="Aerial view of Old Queens"
+      className="w-full rounded-lg"
+    />
+  </div>
+</div>
+
+My first job out of college was at Holtec International, where I worked for almost 3 years. I built my first dashboard - tracking machine utilization by measuring voltage peaks and dips. The tech stack was older (.NET, jQuery), which taught me to appreciate modern tooling. I learned React and TypeScript on the side.
+
+The best part was getting to walk through the factory floor and see metal being lasered, parts CNC'd, and components welded together. There's something grounding about seeing software connect to the physical world.
+
+<div className="my-8 -mx-6 md:-mx-32 lg:-mx-48 px-6 md:px-0">
+  <ZoomableImage
+    src="/holtec-factory-cropped.jpg"
+    alt="Holtec factory"
+    caption="On the factory floor at Holtec International"
+    className="w-full rounded-lg max-w-md mx-auto"
+  />
+</div>
+
+I moved to Nelnet next, working on loan origination and servicing systems. I also built a proof-of-concept transpiler from TypeScript/React to a custom DSL that developers weren't fond of using. While the culture was similar to my previous role, I met amazing people who helped open doors to where I wanted to go.
+
+Now I'm at Fetch, where I lead the frontend guild. I still build internal dashboards, but my focus has shifted to tooling that improves developer experience for building on the web - helping both frontend engineers and enabling backend/product teams to prototype ideas with AI assistance.
+
+What I love about Fetch is that speed is recognized as valuable. I enjoy helping construct and curate tools that help people achieve their goals more easily.
+
+<div className="my-8 -mx-6 md:-mx-32 lg:-mx-48 px-6 md:px-0">
+  <ZoomableImage
+    src="/fe-meetup-resized.jpg"
+    alt="Frontend guild meetup"
+    caption="FE Guild onsite meetup - post-meeting hijinks at 'The Tomb'"
+    className="w-full rounded-lg max-w-md mx-auto"
+  />
+</div>
+
+As guild lead, I organize yearly meetups and foster a community of continuous learning. We share and discuss tech, best practices, architecture, and tooling.
+
+Outside of work, I discovered YouTube creators who shaped how I think about software: Ben Awad first got me into React and Vim, Theo Browne connected me to various open source tools and authors to follow, and ThePrimeagen solidified my love for developer tooling. Now I follow open source devs directly to keep up with the changing landscape.
+
+I also play a competitive card game called [Flesh and Blood](https://fabtcg.com/). It's become a hobby I invest in seriously - traveling to tournaments around the world with friends. This year's World Championship was in Philadelphia, but previous years took me to Osaka, Barcelona, and San Jose. At this year's Worlds, I defeated the previous world champion in round 1 on stream. Didn't make a deep run, but still a proud moment.
+
+I've also been working on a side project called gungi.io - building it has transformed my worldview on what small teams can accomplish with AI assistance. The ability to rapidly explore possibilities and deliver a vision is something I believe will be influential for teams going forward.
+
+<div className="my-8 -mx-6 md:-mx-32 lg:-mx-48 px-6 md:px-0">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+    <iframe
+      className="w-full aspect-video rounded-lg"
+      src="https://www.youtube.com/embed/SiyEE9sMHhY?start=4361"
+      title="Flesh and Blood World Championship"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+    <LinkPreview
+      href="https://gungi.io"
+      title="Gungi.io"
+      description="A free online strategy board game based on the game from Hunter x Hunter. Play against friends or AI."
+      image="/gungi-preview.png"
+    />
+  </div>
+</div>
+
+When I'm not coding or playing cards, I'm hanging out with Toby, my 6-year-old cockapoo. He has a bit of separation anxiety, but otherwise he's the best. He keeps me company while I code - usually curled up somewhere nearby.
+
+<div className="my-8 -mx-6 md:-mx-32 lg:-mx-48 px-6 md:px-0">
+  <ZoomableImage
+    src="/toby.jpg"
+    alt="Toby the cockapoo"
+    caption="Toby, my cockapoo"
+    className="w-full rounded-lg max-w-md mx-auto"
+  />
+</div>
+
+I'm proud to be an engineer. I'm excited about the future - how AI can help smaller teams explore more possibilities and shape how people deliver their vision to help and entertain others.
+
+I'm grateful to my Uncle for showing me that anything can be learned, and to the strangers on the internet who have taught me so much.
