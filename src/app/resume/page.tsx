@@ -5,8 +5,6 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
 	title: "Resume",
-	description:
-		"Highly motivated Full Stack Engineer building high-quality products.",
 };
 
 export default function ResumePage() {
