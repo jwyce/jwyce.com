@@ -18,20 +18,32 @@ export const metadata: Metadata = {
 		default: "Jared Wyce",
 		template: "%s | Jared Wyce",
 	},
-	description: "Software engineer, writer, and music enthusiast.",
+	description:
+		"Software engineer, Flesh and Blood player, and music enthusiast.",
 	openGraph: {
 		title: "Jared Wyce",
-		description: "Software engineer, writer, and music enthusiast.",
+		description:
+			"Software engineer, Flesh and Blood player, and music enthusiast.",
 		url: "https://jwyce.com",
 		siteName: "Jared Wyce",
 		locale: "en_US",
 		type: "website",
+		images: [
+			{
+				url: "https://avatars.githubusercontent.com/u/16946573?v=4",
+				width: 460,
+				height: 460,
+				alt: "Jared Wyce",
+			},
+		],
 	},
 	twitter: {
-		card: "summary_large_image",
+		card: "summary",
 		title: "Jared Wyce",
-		description: "Software engineer, writer, and music enthusiast.",
+		description:
+			"Software engineer, Flesh and Blood player, and music enthusiast.",
 		creator: "@JaredWyce",
+		images: ["https://avatars.githubusercontent.com/u/16946573?v=4"],
 	},
 	robots: {
 		index: true,
