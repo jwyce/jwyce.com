@@ -7,6 +7,8 @@ export const metadata: Metadata = {
 	description: "My top artists and tracks on Spotify.",
 };
 
+export const dynamic = "force-dynamic";
+
 interface Track {
 	name: string;
 	artist: string;
