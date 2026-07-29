@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
 	return (
-		<div className="space-y-8 print:space-y-4 [&_a]:no-underline [&_a:hover]:underline">
+		<div className="space-y-8 print:space-y-3 [&_a]:no-underline [&_a:hover]:underline">
 			<header className="flex items-center justify-between">
 				<div className="flex-1 space-y-1.5">
 					<h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
@@ -80,16 +80,16 @@ export default function ResumePage() {
 
 			<section className="flex min-h-0 flex-col gap-y-3 print:gap-y-1">
 				<h2 className="text-xl font-bold">About</h2>
-				<p className="text-pretty font-mono text-sm text-foreground/80 print:text-[12px]">
-					{RESUME_DATA.summary}
-				</p>
+			<p className="text-pretty font-mono text-sm text-foreground/80 print:text-[12px]">
+				{RESUME_DATA.summary}
+			</p>
 			</section>
 
 			<section className="flex min-h-0 flex-col gap-y-3 print:gap-y-1">
 				<h2 className="text-xl font-bold">Work Experience</h2>
 				<div className="space-y-4 print:space-y-0">
 					{RESUME_DATA.work.map((work) => (
-						<div key={work.company} className="rounded-lg py-1 print:py-0">
+						<div key={work.company} className="rounded-lg py-1 print:py-0 print:break-inside-avoid">
 							<div className="flex flex-col space-y-1.5 print:space-y-1">
 								<div className="flex items-center justify-between gap-x-2 text-base">
 									<h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none print:text-sm">
@@ -172,7 +172,7 @@ export default function ResumePage() {
 				</div>
 			</section>
 
-			<section className="flex min-h-0 flex-col gap-y-3 print:space-y-4 print:break-before-page">
+			<section className="flex min-h-0 flex-col gap-y-3 print:space-y-4 print:break-before-page print:pt-6">
 				<h2 className="text-xl font-bold">Side Projects</h2>
 				<div className="-mx-3 grid grid-cols-1 gap-3 sm:grid-cols-2 print:grid-cols-3 print:gap-2">
 					{RESUME_DATA.projects.map((project) => (
