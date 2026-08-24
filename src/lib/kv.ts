@@ -5,9 +5,14 @@ let client: Redis | null = null;
 export function getKv(): Redis | null {
 	if (client) return client;
 
-	const url = process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
+	const url =
+		process.env.JWYCE_KV_REST_API_URL ??
+		process.env.KV_REST_API_URL ??
+		process.env.UPSTASH_REDIS_REST_URL;
 	const token =
-		process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
+		process.env.JWYCE_KV_REST_API_TOKEN ??
+		process.env.KV_REST_API_TOKEN ??
+		process.env.UPSTASH_REDIS_REST_TOKEN;
 	if (!url || !token) return null;
 
 	client = new Redis({ url, token });
