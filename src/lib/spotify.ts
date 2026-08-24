@@ -1,28 +1,82 @@
+import { getKv } from "./kv";
+
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
-const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
 
-const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 const TOP_TRACKS_ENDPOINT = "https://api.spotify.com/v1/me/top/tracks";
 const TOP_ARTISTS_ENDPOINT = "https://api.spotify.com/v1/me/top/artists";
 const RECENTLY_PLAYED_ENDPOINT =
 	"https://api.spotify.com/v1/me/player/recently-played";
 
+const REFRESH_TOKEN_KEY = "spotify:refresh_token";
+
+export function getBasicAuthHeader(): string {
+	return `Basic ${Buffer.from(`${client_id}:${client_secret}`).toString("base64")}`;
+}
+
+export function getCallbackUrl(requestUrl: string): string {
+	const url = new URL(requestUrl);
+	// Spotify rejects "localhost" redirect URIs — must use the loopback IP
+	if (url.hostname === "localhost") url.hostname = "127.0.0.1";
+	return `${url.origin}/api/spotify/callback`;
+}
+
+async function getRefreshToken(): Promise<string> {
+	const kv = getKv();
+	if (kv) {
+		try {
+			const token = await kv.get<string>(REFRESH_TOKEN_KEY);
+			if (token) return token;
+		} catch (error) {
+			console.warn(
+				"Failed to read Spotify refresh token from KV, falling back to env:",
+				error,
+			);
+		}
+	}
+	return process.env.SPOTIFY_REFRESH_TOKEN ?? "";
+}
+
+async function persistRefreshToken(token: string): Promise<void> {
+	const kv = getKv();
+	if (!kv) return;
+	try {
+		await kv.set(REFRESH_TOKEN_KEY, token);
+	} catch (error) {
+		console.warn("Failed to persist rotated Spotify refresh token:", error);
+	}
+}
+
 async function getAccessToken() {
+	const refresh_token = await getRefreshToken();
+
 	const response = await fetch(TOKEN_ENDPOINT, {
 		method: "POST",
 		headers: {
-			Authorization: `Basic ${basic}`,
+			Authorization: getBasicAuthHeader(),
 			"Content-Type": "application/x-www-form-urlencoded",
 		},
 		body: new URLSearchParams({
 			grant_type: "refresh_token",
-			refresh_token: refresh_token ?? "",
+			refresh_token,
 		}),
 	});
 
-	return response.json();
+	const data = await response.json();
+
+	if (!response.ok) {
+		throw new Error(
+			`Spotify token refresh failed: ${response.status} ${JSON.stringify(data)}. Refresh tokens expire after 6 months — visit /api/spotify/login to re-authorize.`,
+		);
+	}
+
+	// Spotify may rotate the refresh token — persist the new one when issued
+	if (data.refresh_token && data.refresh_token !== refresh_token) {
+		await persistRefreshToken(data.refresh_token);
+	}
+
+	return data;
 }
 
 export async function getTopTracks() {
