@@ -8,18 +8,17 @@ export const RESUME_DATA = {
 	locationLink: "https://www.google.com/maps/place/New+Jersey",
 	about: (
 		<span className="font-mono">
-			Full Stack Engineer with <YearsCoding />+ years building quality
-			products, developer platforms, and AI tooling.
+			Full Stack Engineer with <YearsCoding />+ years building quality products,
+			developer platforms, and AI tooling.
 		</span>
 	),
 	summary: (
 		<>
 			Full Stack Engineer who obsesses over UX and loves building the tools
-			behind great products. Lately that means applied AI tooling and
-			developer platforms like the multiplayer background-agent system and
-			skills registry used daily across Fetch's engineering org. I care about
-			developer experience, type safety, and helping teams ship faster with
-			confidence.
+			behind great products. Lately that means applied AI tooling and developer
+			platforms like the multiplayer background-agent system and skills registry
+			used daily across Fetch's engineering org. I care about developer
+			experience, type safety, and helping teams ship faster with confidence.
 		</>
 	),
 	avatarUrl: "https://avatars.githubusercontent.com/u/16946573?v=4",
@@ -57,7 +56,8 @@ export const RESUME_DATA = {
 			company: "Fetch",
 			link: "https://fetch.com/",
 			badges: ["Remote", "TypeScript", "React", "Svelte", "Node.js", "AWS"],
-			title: "Frontend Engineer → Frontend Engineer II → Senior Software Engineer",
+			title:
+				"Frontend Engineer → Frontend Engineer II → Senior Software Engineer",
 			start: "2023",
 			end: "Present",
 			description: (
@@ -73,10 +73,9 @@ export const RESUME_DATA = {
 						<li>
 							Won senior-leadership backing and cross-org alignment for the
 							platform: delivered the TDR, authored PRDs and vision docs, set
-							the quarterly roadmap, cleared infosec, secured a Modal pilot,
-							and drove the hard calls on tool and model access, model
-							gateway, and observability. Grew the team from 2 to 5 full-time
-							engineers
+							the quarterly roadmap, cleared infosec, secured a Modal pilot, and
+							drove the hard calls on tool and model access, model gateway, and
+							observability. Grew the team from 2 to 5 full-time engineers
 						</li>
 						<li>
 							Built a <strong>harness-agnostic agent skills registry</strong>{" "}
@@ -98,8 +97,8 @@ export const RESUME_DATA = {
 						</li>
 						<li>
 							Led the <strong>Frontend Guild</strong>, establishing best
-							practices, fostering a culture of continuous learning and
-							growth, and shaping the hiring and interview process
+							practices, fostering a culture of continuous learning and growth,
+							and shaping the hiring and interview process
 						</li>
 						<li>
 							Solo-built <strong>data-dense internal dashboards</strong> in

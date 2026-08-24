@@ -80,16 +80,19 @@ export default function ResumePage() {
 
 			<section className="flex min-h-0 flex-col gap-y-3 print:gap-y-1">
 				<h2 className="text-xl font-bold">About</h2>
-			<p className="text-pretty font-mono text-sm text-foreground/80 print:text-[12px]">
-				{RESUME_DATA.summary}
-			</p>
+				<p className="text-pretty font-mono text-sm text-foreground/80 print:text-[12px]">
+					{RESUME_DATA.summary}
+				</p>
 			</section>
 
 			<section className="flex min-h-0 flex-col gap-y-3 print:gap-y-1">
 				<h2 className="text-xl font-bold">Work Experience</h2>
 				<div className="space-y-4 print:space-y-0">
 					{RESUME_DATA.work.map((work) => (
-						<div key={work.company} className="rounded-lg py-1 print:py-0 print:break-inside-avoid">
+						<div
+							key={work.company}
+							className="rounded-lg py-1 print:py-0 print:break-inside-avoid"
+						>
 							<div className="flex flex-col space-y-1.5 print:space-y-1">
 								<div className="flex items-center justify-between gap-x-2 text-base">
 									<h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none print:text-sm">
